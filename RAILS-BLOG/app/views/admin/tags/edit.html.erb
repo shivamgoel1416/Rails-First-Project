@@ -1,0 +1,7 @@
+<h1>Admin::Tags#edit</h1>
+<%= render 'validation_errors', object: @tag %>
+<%= form_for [:admin, @tag] do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.submit %></p>
+<% end %>

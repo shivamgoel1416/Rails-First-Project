@@ -1,0 +1,25 @@
+<h1>Visitors</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Created</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @visitors.each do |visitor| %>
+    <tr>
+        <td><%= visitor.fullname %></td>
+        <td><%= visitor.email %></td>
+        <td><%= visitor.is_active? %></td>
+        <td><%= visitor.created_at %></td>
+        <td><%= link_to 'Delete', admin_visitor_path(visitor), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>
+<%= paginate @visitors %>
