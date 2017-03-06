@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :login
   
   def current_user
-    @user ||= User.find(session[:current_user_id][0]) if session[:current_user_id]
+    @user ||= User.find(session[:current_user_id]) if session[:current_user_id]
   end
 
   def login

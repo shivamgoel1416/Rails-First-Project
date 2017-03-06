@@ -1,8 +1,8 @@
 class UserController < ApplicationController
-  layout session[:current_user_id][1]
+  layout 'userspage'
 
   def index
-    @user = User.where(id: session[:current_user_id][0])
+    @user = User.where(id: session[:current_user_id])
     if @user[0].role_id == 1
       @user = User.where('role_id != ?',1)
       @link_flag = true
