@@ -1,0 +1,20 @@
+<h1>Workout</h1>
+<%= form_for @workout do |f| %>
+  <p>
+    <%= f.label :Date %>
+    <%= f.date_field :date%>
+  </p>
+  <p>
+    <%= f.label :workout %>
+    <%= f.text_field :workout %>
+  </p>
+  <p>
+    <%= f.label :mood %>
+    <%= f.text_field :mood %>
+  </p>
+  <p>
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
