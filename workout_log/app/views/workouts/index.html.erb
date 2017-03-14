@@ -1,24 +1,24 @@
-<table class="table table-bordered table-hover">
+<table class="table">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Workout</th>
-      <th>Mood</th>
-      <th>Duration</th>
-      <th>Action</th>
+      <th><i>Date</i></th>
+      <th><i>Workout</i></th>
+      <th><i>Mood</i></th>
+      <th><i>Duration</i></th>
+      <th><i>Action</i></th>
     </tr>
   </thead>
- <tbody> 
+  <tbody> 
     <% @workouts.each do |workout| %>
     <tr>
-       <td><%= workout.date%></td>
-       <td><%= workout.workout%></td>
-       <td><%= workout.mood%></td>
-       <td><%= workout.length%></td>
+       <td style="color: darkblue"><%= workout.date %></td>
+       <td style="color: darkblue"><%= workout.workout %></td>
+       <td style="color: darkblue"><%= workout.mood %></td>
+       <td style="color: darkblue"><%= workout.length %></td>
        <td>
-        <%= link_to 'Edit', edit_workout_path(workout) %>
-        <%= link_to 'Show', workout_path(workout) %>
-        <%= link_to 'Delete', workout_path(workout), method: :delete, data: {confirm: "Are you sure?"} %>
+        <%= link_to 'Edit', edit_workout_path(workout), :id => "links" %>
+        <%= link_to 'Show', workout_path(workout), :id => "links" %>
+        <%= link_to 'Delete', workout_path(workout), method: :delete, data: {confirm: "Are you sure?"}, :id => "links" %>
        </td>
     </tr>
     <% end %>
